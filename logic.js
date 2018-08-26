@@ -440,6 +440,9 @@ function send_to_discard(card, pull_animation) {
 
 function draw_ability_card(deck) {
     visible_ability_decks.forEach(function (deck) {
+	if(deck.hidden) {
+	    return;
+	}
 	if (deck.must_reshuffle()) {
             reshuffle(deck, true);
 	    console.log("Had to shuffle deck " + deck.name);
@@ -784,7 +787,8 @@ function apply_deck_selection(decks, preserve_existing_deck_state) {
         var deckid = deck.get_real_name().replace(/\s+/g, '');
         var deck_space = document.createElement("div");
         deck_space.id = deckid;
-        deck_space.addEventListener('contextmenu', function(e) {            
+        deck_space.addEventListener('contextmenu', function(e) {
+	    deck.hidden = true;
             this.className = "hiddendeck";
             e.preventDefault();
         }, false);
@@ -838,6 +842,11 @@ function apply_deck_selection(decks, preserve_existing_deck_state) {
         label.title = "Click to show/hide deck";
         label.addEventListener("click", function(e){
             var d = document.getElementById(this.id.replace("switch-",""));
+	    if(deck.hidden) {
+		deck.hidden = false;
+	    } else {
+		deck.hidden = true;
+	    }
             d.className = (d.className == "hiddendeck") ? "card-container" : "hiddendeck";
         }, false)
         list_item.appendChild(label);
