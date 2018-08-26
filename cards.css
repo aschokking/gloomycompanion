@@ -11,22 +11,17 @@
     src:                        url(PirataOne-Gloomhaven.ttf);
 }
 
-@media only screen and (min-height: 500px) and (orientation: portrait) {
-    .card-container {
-        max-width:              49.2vh !important;  /* 33vh * (card aspect ratio == 1.476) */
-    }
-}
-
 .card-container
 {
+    font-size: 1em;
     position:                   relative;
     text-align:                 center;
 
     -webkit-box-flex:           1.0;
 
-    width:                      453px;
     width:                      calc(437px + 1rem); /* 437px == card image width */
-    max-width:                  147.6vh;
+    max-width: 45vw;
+    max-height: 45vh;
     margin:                     8px;
 }
 
@@ -322,7 +317,7 @@
 
 .card.ability.front
 {
-    background-image:           url(images/front.jpg);
+    background-color: black;
 }
 
 .card.ability.back

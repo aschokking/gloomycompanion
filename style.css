@@ -28,12 +28,6 @@ body
     justify-content:    space-around;
 }
 
-@media only screen and (max-height: 480px) and (orientation: portrait) {
-    #tableau {
-        -webkit-box-orient: vertical;
-    }
-}
-
 ul.tabcontainer
 {
     display:            -webkit-box;
@@ -167,4 +161,16 @@ li.currentdeck a:hover {
     height:             5ch;
     cursor:             pointer;
     z-index:            1;
+}
+
+.big-button {
+    margin: 20px;
+    font-size: 2em;
+    padding: 20px;
+}
+
+#scenariospage input[type="number"] {
+    padding: 10px;
+    margin: 20px;
+    font-size: 2em;
 }

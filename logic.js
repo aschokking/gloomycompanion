@@ -969,7 +969,7 @@ function LevelSelector(text, inline) {
     listitem.innerText = text;
     level.html.appendChild(listitem);
 
-    var level_spinner = create_input("number", "scenario_number", "1", "");
+    var level_spinner = create_input("number", "level_number", "3", "");
     level_spinner.input.min = 0;
     level_spinner.input.max = max_level;
     level.html.appendChild(level_spinner.input);
@@ -1080,7 +1080,7 @@ function ScenarioList(scenarios) {
     listitem.innerText = "Select scenario number";
     scenariolist.ul.appendChild(listitem);
 
-    var scenario_spinner = create_input("number", "scenario_number", "1", "");
+    var scenario_spinner = create_input("number", "scenario_number", "", "");
     scenario_spinner.input.min = 1;
     scenario_spinner.input.max = scenarios.length;
     scenariolist.ul.appendChild(scenario_spinner.input);
