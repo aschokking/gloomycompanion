@@ -844,9 +844,6 @@ function apply_deck_selection(decks, preserve_existing_deck_state) {
             var d = document.getElementById(this.id.replace("switch-",""));
 	    if(deck.hidden) {
 		deck.hidden = false;
-		deck.draw_top_card();
-		flip_up_top_card(deck);
-		write_to_storage(deck.name, JSON.stringify(deck));
 	    } else {
 		deck.hidden = true;
 	    }
